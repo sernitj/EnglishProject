@@ -1,0 +1,182 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Quizz</title>
+    <script type="text/javascript">
+			$(document).ready(function(){
+				$("#main").fadeIn(2000);
+			});
+		</script>
+
+		<style>
+			.button {
+			  border-radius: 4px;
+			  background-color: #f4511e;
+			  border: none;
+			  color: #FFFFFF;
+			  text-align: center;
+			  font-size: 28px;
+			  padding: 20px;
+			  width: 200px;
+			  transition: all 0.5s;
+			  cursor: pointer;
+			  margin: 5px;
+			}
+
+			.button span {
+			  cursor: pointer;
+			  display: inline-block;
+			  position: relative;
+			  transition: 0.5s;
+			}
+
+			.button span:after {
+			  content: '\00bb';
+			  position: absolute;
+			  opacity: 0;
+			  top: 0;
+			  right: -20px;
+			  transition: 0.5s;
+			}
+
+			.button:hover span {
+			  padding-right: 25px;
+			}
+
+			.button:hover span:after {
+			  opacity: 1;
+			  right: 0;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<center>
+			<button id="begin" class="button" onclick="begin()"><span>Commencer </span></button>
+			<br>
+			<br>
+			<img id="qstimg" src="Images/question.png" alt="Il y a une question ici">
+			<br>
+			<button id="btnA" class="button" name="A" onclick="checkAnswer(this)"/>
+			<button id="btnB" class="button" name="B" onclick="checkAnswer(this)"/>
+			<button id="btnC" class="button" name="C" onclick="checkAnswer(this)"/>
+			<button id="btnD" class="button" name="D" onclick="checkAnswer(this)"/>
+			<br>
+			<br>
+			<button id="next" class="button" onclick="nextQuestion()"><span>Suivant </span></button>
+		</center>
+
+		<script type="text/javascript">
+			//Answers saved in a matrix
+			var answers = [["Réponse 1.A", "Réponse 1.B", "Réponse 1.C", "Réponse 1.D", "A", 0],
+										 ["Réponse 2.A", "Réponse 2.B", "Réponse 2.C", "Réponse 2.D", "B", 0],
+									   ["Réponse 3.A", "Réponse 3.B", "Réponse 3.C", "Réponse 3.D", "C", 0],
+									   ["Réponse 4.A", "Réponse 4.B", "Réponse 4.C", "Réponse 4.D", "D", 0],
+									   ["Réponse 5.A", "Réponse 5.B", "Réponse 5.C", "Réponse 5.D", "A", 0],
+									   ["Réponse 6.A", "Réponse 6.B", "Réponse 6.C", "Réponse 6.D", "B", 0]];
+
+			//Count the number of the current question in the quizz
+			var count = 0;
+			//Id of the next question
+			var nb_question;
+
+			//Hiding the element at first
+			document.getElementById("qstimg").style.display = "none";
+
+			document.getElementById("btnA").style.display = "none";
+			document.getElementById("btnB").style.display = "none";
+			document.getElementById("btnC").style.display = "none";
+			document.getElementById("btnD").style.display = "none";
+
+			document.getElementById("next").style.display = "none";
+
+			//Begin the quizz
+			function begin() {
+				//No longer need the "BEGIN" button
+				document.getElementById("begin").style.display = "none";
+
+				//Question and answers buttons are displayed
+				document.getElementById("qstimg").style.display = "block";
+
+				document.getElementById("btnA").style.display = "block";
+				document.getElementById("btnB").style.display = "block";
+				document.getElementById("btnC").style.display = "block";
+				document.getElementById("btnD").style.display = "block";
+
+				nextQuestion();
+			}
+
+			//Next question to answer
+			//***************** BEGIN FUNCTION nextQuestion *************************
+			function nextQuestion() {
+				//The question counter is incremented
+				count = count + 1;
+
+				//Is it the end of the quizz ?
+				if (count > 2) {
+					alert("Quizz terminé !");
+				}
+				//Else, the next question is displayed
+				else {
+					//Drawing a question number
+					nb_question = Math.floor(Math.random() * answers.length);
+
+					while (answers[nb_question][5] == 1) {
+						nb_question = Math.floor(Math.random() * answers.length);
+					}
+
+					answers[nb_question][5] = 1;
+
+					//Buttons according to the draw's result
+					var btnA = document.getElementById("btnA");
+					var btnB = document.getElementById("btnB");
+					var btnC = document.getElementById("btnC");
+					var btnD = document.getElementById("btnD");
+
+					btnA.innerHTML = answers[nb_question][0];
+					btnB.innerHTML = answers[nb_question][1];
+					btnC.innerHTML = answers[nb_question][2];
+					btnD.innerHTML = answers[nb_question][3];
+
+					btnA.style.backgroundColor = "#f4511e";
+					btnB.style.backgroundColor = "#f4511e";
+					btnC.style.backgroundColor = "#f4511e";
+					btnD.style.backgroundColor = "#f4511e";
+
+					btnA.disabled = false;
+					btnB.disabled = false;
+					btnC.disabled = false;
+					btnD.disabled = false;
+
+					document.getElementById("next").display = "none";
+				}
+			}
+			//***************** END FUNCTION nextQuestion ***************************
+
+			//Check the answer
+			//***************** BEGIN FUNCTION checkAnswer **************************
+			function checkAnswer(answer) {
+				if (answer.name == answers[nb_question][4]) { //if it's right
+					answer.style.backgroundColor = "#149414";
+				}
+				else { //if it's wrong
+					answer.style.backgroundColor = "#de2916";
+					document.getElementById("btn"+answers[nb_question][4]).style.backgroundColor = "#149414";
+				}
+
+				//It is not possible to answer again to this question
+				document.getElementById("btnA").disabled = true;
+				document.getElementById("btnB").disabled = true;
+				document.getElementById("btnC").disabled = true;
+				document.getElementById("btnD").disabled = true;
+
+				//The user may continue the quizz
+				document.getElementById("next").style.display = "block";
+			}
+			//***************** END FUNCTION checkAnswer ****************************
+
+		</script>
+  </body>
+
+</html>
