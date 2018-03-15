@@ -14,7 +14,7 @@ document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "
 \
     <tr>\
       <td style="padding: 50px 50px 50px 50px;">\
-        <a href="article1.html">\
+        <a href="star-wars.html">\
           <div id="cont1" class="container">\
            <img id="img1" class="art-bg" src="images/article1.jpg" alt="Star Wars">\
            <div class="top-left">\
@@ -36,7 +36,7 @@ document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "
     </tr>\\
     <tr>\
       <td style="padding: 0 50px 50px 50px;">\
-        <a href="article2.html">\
+        <a href="hms-queen-elizabeth.html">\
           <div id="cont2" class="container">\
            <img id="img2" class="art-bg" src="images/article2.jpg" alt="Star Wars">\
            <div class="top-left">\
@@ -59,7 +59,7 @@ document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "
 \
     <tr>\
       <td style="padding: 0 50px 50px 50px;">\
-        <a href="article3.html">\
+        <a href="cigarets-health-canada.html">\
           <div id="cont3" class="container">\
            <img id="img3" class="art-bg" src="images/article3.png" alt="Cigaret Health Canada">\
            <div class="top-left">\
@@ -82,9 +82,9 @@ document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "
 \
     <tr>\
       <td style="padding: 0 50px 50px 50px;">\
-        <a href="article4.html">\
+        <a href="5-mistakes-developers-do.html">\
           <div id="cont4" class="container">\
-           <img id="img4" class="art-bg" src="images/article4.jpg" alt="Star Wars">\
+           <img id="img4" class="art-bg" src="images/article4.jpg" alt="5 Mistakes Developers do">\
            <div class="top-left">\
              <p class="title">\
                5 Mistakes Developers make Selling to Developers\
@@ -95,6 +95,52 @@ document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "
            </div>\
            <div class="bottom-right">\
              <img src="../others/images/length4.png" alt="length4">\
+             <br>\
+             <img src="../others/images/difficulty3.png" alt="difficulty3">\
+           </div>\
+          </div>\
+        </a>\
+      </td>\
+    </tr>\
+\
+    <tr>\
+      <td style="padding: 0 50px 50px 50px;">\
+        <a href="long-nights.html">\
+          <div id="cont5" class="container">\
+           <img id="img5" class="art-bg" src="images/article5.jpg" alt="Long Nights Lyrics">\
+           <div class="top-left">\
+             <p class="title">\
+               Long Nights Lyrics\
+             </p>\
+             <p class="aut-src">\
+               Eddie Vedder, Into the Wild album, 18 sep. 2007\
+             </p>\
+           </div>\
+           <div class="bottom-right">\
+             <img src="../others/images/length1.png" alt="length1">\
+             <br>\
+             <img src="../others/images/difficulty3.png" alt="difficulty3">\
+           </div>\
+          </div>\
+        </a>\
+      </td>\
+    </tr>\
+\
+    <tr>\
+      <td style="padding: 0 50px 50px 50px;">\
+        <a href="blackbird.html">\
+          <div id="cont6" class="container">\
+           <img id="img6" class="art-bg" src="images/article6.jpg" alt="Blackbird Lyrics">\
+           <div class="top-left">\
+             <p class="title">\
+               Blackbird Lyrics\
+             </p>\
+             <p class="aut-src">\
+               The Beatles, The White album, 1968\
+             </p>\
+           </div>\
+           <div class="bottom-right">\
+             <img src="../others/images/length1.png" alt="length1">\
              <br>\
              <img src="../others/images/difficulty3.png" alt="difficulty3">\
            </div>\

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Quiz - HMS Queen Elizabeth, UK's newest and biggest aircraft carrier, springs a leak</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="main.css"/>
+	</head>
+
+	<body>
+<!-- ********************************************************
+		 ************** Navigation bar - main logo **************
+		 ******************************************************** -->
+		<nav class="navbar">
+			<div class="side">
+				<header class="titlediv">
+					<a class="titlelink" href="main.html">English project</a>
+				</header>
+
+				<ul class="sidelist">
+					<li class="nav-exo"><span class="exo">Exercices</span><li>
+					<li><a class ="sideitem" href="grammar.html">Grammar</a></li>
+					<li><a class ="sideitem" href="spelling.html">Spelling</a></li>
+					<li class="comprehension">
+					<label for="menu" class="menu">Comprehension</label>
+					<input type="checkbox" id="menu" role="button"/>
+						<ul class="submenu">
+							<li><a class ="sideitem" href="listening-comprehension.html">Listening</a></li>
+							<li><a class ="sideitem" href="reading-comprehension.html">Reading</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+<!-- ********************************************************
+		 *************** Top menu - section title ***************
+		 ******************************************************** -->
+		<header>
+			<ul class="toplist">
+				<li class="title">Reading comprehension</li>
+				<li><a class ="topitem about" href="about.html" data="À propos du site">About</a></li>
+				<li><a class ="topitem account" href="account.html" data="Accéder à son compte">Account</a></li>
+				<li><button class ="btn">Language</button></li>
+			</ul>
+		</header>
+
+<!-- ********************************************************
+		 *************** Main content of the page ***************
+	 	 ******************************************************** -->
+		<div class="page">
+			<script src="quiz2.js"></script>
+			<script type="text/javascript">
+				//Answers saved in a matrix
+				var answers = [["Queen Elizabeth I", "Queen Elizabeth II", "A british military ship", "Hayon Mobile Services", "C", 0, "What is this article about ?"],
+											 ["Less than a month", "Between 1 month & 3 months", "Between 3 months & 1 year", "More than a year", "A", 0, "How long after in service did the incident occur ?"],
+										   ["It is too heavy", "Change in the sea trials programme", "It is too expensive", "There is a leak", "D", 0, "What is the issue ?"],
+										   ["About 100", "About 1.000", "About 10.000", "About 100.000", "C", 0, "How many people did it take to build this HMS ?"],
+										   ["Glasgow", "Portsmouth", "Liverpool", "Rosyth", "B", 0, "Where will the repair take place ?"],
+										   ["£3.1mm", "£1.3mm", "£31bn", "£3.1bn", "D", 0, "How much did this HMS cost ?"]];
+
+				//Count the number of the current question in the quiz
+				var count = 0;
+				//Id of the next question
+				var nb_question;
+
+				//Begin the quiz
+				nextQuestion();
+
+				//Next question to answer
+				//***************** BEGIN FUNCTION nextQuestion *************************
+				function nextQuestion() {
+					//The question counter is incremented
+					count = count + 1;
+
+					//Is it the end of the quiz ?
+					if (count > 5) {
+						document.getElementById("prg").style="width: 100%";
+						alert("Quiz terminé !");
+						window.location.href='hms-queen-elizabeth.html';
+					}
+					//Else, the next question is displayed
+					else {
+						//Drawing a question number
+						nb_question = Math.floor(Math.random() * answers.length);
+
+						while (answers[nb_question][5] == 1) {
+							nb_question = Math.floor(Math.random() * answers.length);
+						}
+
+						answers[nb_question][5] = 1;
+
+						//Buttons according to the draw's result
+						var btnA = document.getElementById("btnA");
+						var btnB = document.getElementById("btnB");
+						var btnC = document.getElementById("btnC");
+						var btnD = document.getElementById("btnD");
+	          var question = document.getElementById("question");
+
+						btnA.innerHTML = answers[nb_question][0];
+						btnB.innerHTML = answers[nb_question][1];
+						btnC.innerHTML = answers[nb_question][2];
+						btnD.innerHTML = answers[nb_question][3];
+	          question.innerHTML = answers[nb_question][6];
+
+						btnA.className = "myButt wrong";
+						btnB.className = "myButt wrong";
+						btnC.className = "myButt wrong";
+						btnD.className = "myButt wrong";
+
+						document.getElementById("btn"+answers[nb_question][4]).className = "myButt right";
+
+						/*btnA.style.backgroundColor = "#f4511e";
+						btnB.style.backgroundColor = "#f4511e";
+						btnC.style.backgroundColor = "#f4511e";
+						btnD.style.backgroundColor = "#f4511e";*/
+
+						btnA.disabled = false;
+						btnB.disabled = false;
+						btnC.disabled = false;
+						btnD.disabled = false;
+
+						document.getElementById("next").style.display = "none";
+
+						document.getElementById("prg").style="width: "+20*(count-1)+"%";
+						document.getElementById("nbq").innerHTML=count+"/5";
+					}
+				}
+				//***************** END FUNCTION nextQuestion ***************************
+
+				//Check the answer
+				//***************** BEGIN FUNCTION checkAnswer **************************
+				function checkAnswer(answer) {
+					if (answer.name == answers[nb_question][4]) { //if it's right
+						answer.style.backgroundColor = "#149414";
+					}
+					else { //if it's wrong
+						document.getElementById("btn"+answers[nb_question][4]).className += " active";
+					}
+
+					//It is not possible to answer again to this question
+					document.getElementById("btnA").disabled = true;
+					document.getElementById("btnB").disabled = true;
+					document.getElementById("btnC").disabled = true;
+					document.getElementById("btnD").disabled = true;
+
+					//The user may continue the quiz
+					document.getElementById("next").style.display = "block";
+				}
+				//***************** END FUNCTION checkAnswer ****************************
+
+			</script>
+		</div>
+	</body>
+</html>
