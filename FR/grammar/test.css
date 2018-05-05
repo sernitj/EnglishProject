@@ -1,0 +1,52 @@
+/* Titre */
+a.title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  width: 400px;
+  text-shadow: 2px 2px #BDBDBD;
+  text-align: center;
+  text-decoration: none;
+  color: blue;
+}
+
+/* Answers */
+a.wrong, a.right {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+/* Question text */
+p.phrase {
+  color: #2E2E2E;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+
+/* Heading */
+p.heading {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+p.hWrong {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 0 0 0;
+}
+
+p.hRight {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 0 0 0;
+}
+
+/* Table des scores */
+scores {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}

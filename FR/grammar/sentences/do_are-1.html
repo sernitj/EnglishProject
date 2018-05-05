@@ -1,0 +1,121 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>The Carroll Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" type="text/css" href="../css/test.css">
+  <link rel="stylesheet" type="text/css" href="../css/buttons.css">
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #f9f9f7;">
+ <table border="1" cellpadding="0" cellspacing="0" width="100%">
+
+  <tr>
+   <td id="heading" style="padding: 10px 0 10px 0; text-align: center;">
+     <p class=heading>Clique sur la faute, ou sur le bouton "Correct" si tu penses qu'il n'y en a pas.</p>
+   </td>
+  </tr>
+
+  <tr>
+   <td style="padding: 10px 0 10px 40px; text-align: left;">
+     <p id="phrase" class=phrase>
+       <a class=wrong onclick=wrong(this)>Are you stupid ? I think you</a><a class=right id="right" onclick=right(this)> do.</a>
+     </p>
+   </td>
+  </tr>
+
+  <tr>
+   <td id="btnAnswer" style="padding: 0 0 30px calc(50% - 60px); text-align: center;">
+     <div class="center-wrap" style="text-align: center;">
+     <a>
+      <div class="button" style="cursor: pointer;" onclick=check(this)>
+        Correct
+      <div class="mask"></div></a>
+     </div></div>
+   </td>
+  </tr>
+
+  <tr>
+   <td id="regle" style="padding: 10px 0 30px 40px; text-align: left;">
+
+   </td>
+  </tr>
+
+ </table>
+
+<script type="text/javascript">
+  clicked = false;
+  //Wrong answer
+  //***************** BEGIN FUNCTION wrong *************************
+  function wrong(answer) {
+    if (!clicked) {
+      document.getElementById("right").style = "background-color: #ffff66;";
+      heading = document.getElementById("heading");
+      heading.style = "background-color: #ff6721; text-align: center";
+      heading.innerHTML = "<p class=hWrong>MAUVAISE REPONSE</p>";
+      clicked = true;
+    }
+  }
+  //***************** END FUNCTION wrong ***************************
+
+  //Right answer
+  //***************** BEGIN FUNCTION right **************************
+  function right(answer) {
+    if (!clicked) {
+      answer.style = "background-color: #ffff66;";
+      heading = document.getElementById("heading");
+      heading.style = "background-color: #08af00; text-align: center";
+      heading.innerHTML = "<p class=hRight>BONNE REPONSE</p>";
+      clicked = true;
+    }
+  }
+  //***************** END FUNCTION right ****************************
+
+  //Check answer
+  //***************** BEGIN FUNCTION check **************************
+  function check(btn) {
+    if (!clicked) {
+      if (!document.getElementById("right")) {
+        heading = document.getElementById("heading");
+        heading.style = "padding: 10px 0 10px 0; background-color: #08af00; text-align: center";
+        heading.innerHTML = "<p class=hRight>BONNE REPONSE</p>";
+      }
+      else {
+        document.getElementById("right").style = "background-color: #ffff66;";
+        heading = document.getElementById("heading");
+        heading.style = "padding: 10px 0 10px 0; background-color: #ff6721; text-align: center";
+        heading.innerHTML = "<p class=hWrong>MAUVAISE REPONSE</p>";
+      }
+      btn.innerHTML = "Suivant";
+      clicked = true;
+    }
+    else {
+      document.getElementById("regle").innerHTML = "<iframe src='../rules/do_are.html' frameborder='0'></iframe>";
+      lireFichierTexte("../sentences/myTest.txt");
+    }
+  }
+  //***************** END FUNCTION check ****************************
+
+  //Read a text file
+  //***************** BEGIN FUNCTION lireFichierTexte **************************
+  function lireFichierTexte(fichier) {
+    //On lance la requête pour récupérer le fichier
+    var fichierBrut = new XMLHttpRequest();
+    fichierBrut.open("GET", fichier, false);
+    //On utilise une fonction sur l'événement "onreadystate"
+    fichierBrut.onreadystatechange = function () {
+      if(fichierBrut.readyState === 4) {
+        //On contrôle bien quand le statut est égal à 0
+        if(fichierBrut.status === 200 || fichierBrut.status == 0) {
+        //On peut récupérer puis traiter le texte du fichier
+        var texteComplet = fichierBrut.responseText;
+        alert(texteComplet);
+        }
+      }
+    }
+    fichierBrut.send(null);
+  }
+  //***************** END FUNCTION lireFichierTexte ****************************
+</script>
+
+</body>
+</html>

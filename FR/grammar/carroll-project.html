@@ -2,21 +2,17 @@
 
 <html>
 	<script>
-		fichier = "/Main/main.html"
+		fichier = "/grammar/carroll-project.html"
 
 		function EN() {
 			window.location.href = "../../EN" + fichier;
 		}
-
-		function FR() {
-			window.location.href = "../../FR" + fichier;
-		}
 	</script>
 	<head>
-		<title>Projet d'anglais</title>
+		<title>English Project</title>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="css/main.css"/>
+		<link rel="stylesheet" href="../Main/css/main.css"/>
 	</head>
 
 	<body>
@@ -28,7 +24,7 @@
 
 				<ul class="sidelist">
 					<li class="nav-exo"><span class="exo">Exercices</span><li>
-					<li><a class ="sideitem" href="../grammar/grammar.html">Grammaire</a></li>
+					<li><a class ="sideitem" id="active" href="../grammar/grammar.html">Grammaire</a></li>
 					<li><a class ="sideitem" href="../Vocabulary/vocabulary.html">Vocabulaire</a></li>
 					<li class="comprehension">
 					<input type="checkbox" id="menu" role="button"/>
@@ -45,15 +41,15 @@
 		<header>
 			<ul class="toplist">
 				<li class="title">Menu principal</li>
-				<li><a class ="topitem about" href="about.html" data="À propos du site">À propos</a></li>
-				<li><a class ="topitem account" href="account.html" data="Accéder à son compte">Compte</a></li>
+				<li><a class ="topitem about" href="about.html" data="About the project">À propos</a></li>
+				<li><a class ="topitem account" href="account.html" data="Go to your personal data">Compte</a></li>
 				<li><a class ="flags"><img border="0" alt="FR" src="../Main/Images/flag_france.png" width="30" height="30"></a></li>
-				<li><a class ="flags" onClick="EN()"><img border="0" alt="EN" src="../Main/Images/flag_great_britain.png" width="30" height="30"></a></li>
+				<li><a class ="flags"  onClick="EN()"><img border="0" alt="EN" src="../Main/Images/flag_great_britain.png" width="30" height="30"></a></li>
 			</ul>
 		</header>
 
 		<div class="page">
-			<script src="mainPage.js"></script>
+			<iframe src='test.html' frameborder='0' style="width: 100%; height: 550px"></iframe>
 		</div>
 	</body>
 </html>
