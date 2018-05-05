@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+	<script>
+		fichier = "/Main/main.html"
+
+		function EN() {
+			window.location.href = "../../EN" + fichier;
+		}
+		
+		function FR() {
+			window.location.href = "../../FR" + fichier;
+		}
+	</script>
+	<head>
+		<title>Projet d'anglais</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/main.css"/>
+	</head>
+
+	<body>
+		<nav class="navbar">
+			<div class="side">
+				<header class="titlediv">
+					<a class="titlelink" href="main.html">Projet d'anglais</a>
+				</header>
+
+				<ul class="sidelist">
+					<li class="nav-exo"><span class="exo">Exercices</span><li>
+					<li><a class ="sideitem" href="../grammar/grammar.html">Grammaire</a></li>
+					<li><a class ="sideitem" href="../Vocabulary/vocabulary.html">Orthographe</a></li>
+					<li class="comprehension">
+					<input type="checkbox" id="menu" role="button"/>
+					<label for="menu" class="menu">Comprehension</label>
+						<ul class="submenu">
+							<li><a class ="sideitem" href="../listening-comprehension/listening-comprehension.html">Orale</a></li>
+							<li><a class ="sideitem" href="../reading-comprehension/reading-comprehension.html">Écrite</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<header>
+			<ul class="toplist">
+				<li class="title">Menu principal</li>
+				<li><a class ="topitem about" href="about.html" data="À propos du site">À propos</a></li>
+				<li><a class ="topitem account" href="account.html" data="Accéder à son compte">Compte</a></li>
+				<li><a class ="flags"><img border="0" alt="FR" src="../Main/Images/flag_france.png" width="30" height="30"></a></li>
+				<li><a class ="flags" onClick="EN()"><img border="0" alt="EN" src="../Main/Images/flag_great_britain.png" width="30" height="30"></a></li>
+			</ul>
+		</header>
+
+		<div class="page">
+			<script src="mainPage.js"></script>
+		</div>
+	</body>
+</html>

@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 
 <html>
+	<script>
+		fichier = "/Main/main.html"
+		
+		function FR() {
+			window.location.href = "../../FR" + fichier;
+		}
+	</script>
 	<head>
-		<title>Carroll Project</title>
+		<title>English Project</title>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/main.css"/>
@@ -12,13 +19,13 @@
 		<nav class="navbar">
 			<div class="side">
 				<header class="titlediv">
-					<a class="titlelink" href="mainEn.html">Carroll Project</a>
+					<a class="titlelink" href="main.html">English Project</a>
 				</header>
 
 				<ul class="sidelist">
 					<li class="nav-exo"><span class="exo">Exercices</span><li>
 					<li><a class ="sideitem" href="../grammar/grammar.html">Grammar</a></li>
-					<li><a class ="sideitem" href="../grammar/spelling.html">Spelling</a></li>
+					<li><a class ="sideitem" href="../Vocabulary/vocabulary.html">Spelling</a></li>
 					<li class="comprehension">
 					<input type="checkbox" id="menu" role="button"/>
 					<label for="menu" class="menu">Comprehension</label>
@@ -34,11 +41,10 @@
 		<header>
 			<ul class="toplist">
 				<li class="title">Main menu</li>
-				<li><a class ="topitem about" href="about.html" data="À propos du site">About</a></li>
-				<li><a class ="topitem account" href="account.html" data="Accéder à son compte">Account</a></li>
-				<li><button class ="btn">Language</button></li>
-				<li><a href="FR/Main/mainFr.html"><img border="0" alt="Fr" src="../Main/Images/flag_france.png" width="10" height="10"></a></li>
-				<li><a href="../Main/mainEn.html"><img border="0" alt="En" src="../Main/Images/flag_great_britain.png" width="10" height="10"></a></li>
+				<li><a class ="topitem about" href="about.html" data="About the project">About</a></li>
+				<li><a class ="topitem account" href="account.html" data="Go to your personal data">Account</a></li>
+				<li><a class ="flags" onClick="FR()"><img border="0" alt="FR" src="../Main/Images/flag_france.png" width="30" height="30"></a></li>
+				<li><a class ="flags"><img border="0" alt="EN" src="../Main/Images/flag_great_britain.png" width="30" height="30"></a></li>
 			</ul>
 		</header>
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+	<script>
+		function chooseCategory() {
+			var checkedValue = null; 
+			var inputElements = document.getElementsByClassName('category');
+			
+			for(var i=0; inputElements[i]; ++i){
+				  if(inputElements[i].checked){
+					   checkedValue = inputElements[i].value;
+					   break;
+				  }
+			}
+			
+			window.location.href = "./" + checkedValue + ".html";
+		}
+	</script>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/category-choose.css"/>
+		<link rel="stylesheet" type="text/css" href="../reading-comprehension/css/buttons.css">
+	</head>
+
+	<body>
+		<div>
+			<label class="container">Arts
+				<input class="category" type="radio" checked="checked" name="category" value="arts">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">Science and research
+				<input class="category" type="radio" name="category" value="science">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">Social life
+				<input class="category" type="radio" name="category" value="social">
+				<span class="checkmark"></span>
+			</label>
+			<label class="container">Food and drink
+				<input class="category" type="radio" name="category" value="food">
+				<span class="checkmark"></span>
+			</label>
+		</div>
+		<div id="next" class="button" style="cursor: pointer;" onclick="chooseCategory()"> Suivant
+				<span class="shift">›</span>
+			    <div class="mask"></div></a>
+			</div>
+		</div>
+	</body>
+</html>
