@@ -1,0 +1,127 @@
+/* Container holding the image and the text */
+div.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+/* Bottom left text */
+div.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+/* Top left text */
+div.top-left {
+    position: absolute;
+    top: -5px;
+    left: 24px;
+}
+
+/* Top right text */
+div.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+/* Bottom right text */
+div.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+/* Centered text */
+div.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Background image of an article */
+img.art-bg {
+  width:600px;
+  height:250px;
+  opacity:0.4;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+/* Title of an article */
+p.title {
+  text-align: justify;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  width: 400px;
+  text-shadow: 2px 2px #a8a8a8;
+}
+
+/* Author and source */
+p.aut-src {
+  text-align: left;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 17px;
+  width: 400px;
+  text-shadow: 1px 1px #a8a8a8;
+}
+
+/* When an article is hovered */
+
+#cont1:hover > #img1 {
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+#cont1:hover * {
+  transform: translate(-10px, -10px);
+}
+
+
+#cont2:hover > #img2 {
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+#cont2:hover * {
+  transform: translate(-10px, -10px);
+}
+
+
+#cont3:hover > #img3 {
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+#cont3:hover * {
+  transform: translate(-10px, -10px);
+}
+
+
+#cont4:hover > #img4 {
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+#cont4:hover * {
+  transform: translate(-10px, -10px);
+}
+
+#cont5:hover > #img5 {
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+#cont5:hover * {
+  transform: translate(-10px, -10px);
+}
+
+#cont6:hover > #img6 {
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+#cont6:hover * {
+  transform: translate(-10px, -10px);
+}

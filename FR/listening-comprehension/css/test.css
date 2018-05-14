@@ -1,0 +1,480 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400|Raleway:300);
+
+html {
+  padding-top: 50px;
+  font-family: 'Open Sans', Helvetica, arial, sans-serif;
+  text-align: center;
+  background-color: #eeeeee;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+  }
+
+	i,em,
+  b,strong,
+  span {
+    transition: none;
+  }
+}
+
+*:before,
+*:after {
+  z-index: -1;
+}
+
+h1,
+h4 {
+  font-family: 'Raleway', 'Open Sans', sans-serif;
+  margin: 0;
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+  line-height: 80px;
+  color: black;
+}
+
+.centerer {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem
+}
+
+@media (min-width: 600px) {
+  .wrap {
+    width: 50%;
+    float: left;
+  }
+}
+
+[class^="btn-"] {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  @include size(100%, 80px);
+  max-width: 250px;
+  margin: 1rem auto;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+}
+
+.btn-0 {
+	position: relative;
+  display: block;
+  overflow: hidden;
+  @include size(100%, 80px);
+  max-width: 250px;
+  margin: 1rem auto;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+
+  color: tint(random-color(200));
+
+  &:before {
+    content: '';
+    @include absolute(0,0,0,0);
+    background-color: shade(random-color(200), 40%);
+    transform: translateX(-100%);
+  }
+
+  &:hover {
+    color: tint(random-color(200), 75%);
+
+    &:before {
+      transform: translateX(0);
+    }
+  }
+}
+
+.btn-1 {
+  color: tint(random-color(200));
+
+  &:before {
+    content: '';
+    @include absolute(0,-50px,0,0);
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid shade(random-color(200), 40%);
+    transform: translateX(-100%);
+  }
+
+  &:hover {
+    color: tint(random-color(200), 75%);
+
+    &:before {
+      transform: translateX(0);
+    }
+  }
+}
+
+.btn-1-2 {
+  color: tint(random-color(200));
+
+  &:before,
+  &:after {
+    content: '';
+    @include absolute(0,0,0,0);
+    border-bottom: 80px solid shade(random-color(200), 40%);
+  }
+
+  &:before {
+    right: -50px;
+    border-right: 50px solid transparent;
+    transform: translateX(-100%);
+  }
+
+  &:after {
+    left: -50px;
+    border-left: 50px solid transparent;
+    transform: translateX(100%);
+  }
+
+  &:hover {
+    color: tint(random-color(200), 75%);
+
+    &:before { transform: translateX(-40%); }
+    &:after { transform: translateX(40%); }
+  }
+}
+
+.btn-2 {
+  color: tint(random-color(200));
+
+  &:before,
+  &:after {
+    content: '';
+    @include absolute(0,0,0,0);
+  }
+
+  &:before {
+    right: -50px;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid shade(random-color(200), 40%);
+    transform: translateX(-100%);
+  }
+
+  &:after {
+    left: -50px;
+    border-left: 50px solid transparent;
+    border-top: 80px solid shade(random-color(200), 40%);
+    transform: translateX(100%);
+  }
+
+  &:hover {
+    color: tint(random-color(200), 75%);
+
+    &:before { transform: translateX(-49%); }
+    &:after { transform: translateX(49%); }
+  }
+}
+
+.btn-3 {
+  &:before,
+  &:after {
+    content: '';
+    @include absolute(0,0,0,0);
+    border-top: 80px/2 solid shade(random-color(200), 40%);
+    border-bottom: 80px/2 solid shade(random-color(200), 40%);
+  }
+
+  &:before {
+    border-right: 80px/2 solid transparent;
+    transform: translateX(-100%);
+  }
+
+  &:after {
+    border-left: 80px/2 solid transparent;
+    transform: translateX(100%);
+  }
+
+  &:hover {
+    color: tint(random-color(200), 75%);
+
+    &:before { transform: translateX(-30%); }
+    &:after { transform: translateX(30%); }
+  }
+}
+
+.btn-4 {
+  color: tint(random-color(200));
+
+  &:before,
+  &:after,
+  span:before,
+  span:after {
+    content: '';
+    @include absolute(0,0,0,0);
+    background-color: shade(random-color(200), 40%);
+  }
+
+  &:before { transform: translate(-100%, -100%); }
+  &:after { transform: translate(-100%, 100%); }
+  span:before { transform: translate(100%, -100%); }
+  span:after { transform: translate(100%, 100%); }
+
+  &:hover {
+    color: tint(random-color(200), 75%);
+
+    &:before { transform: translate(-50%, -50%); }
+    &:after { transform: translate(-50%, 50%); }
+    span:before { transform: translate(50%, -50%); }
+    span:after { transform: translate(50%, 50%); }
+  }
+}
+
+.btn-5 {
+	color: tint(random-color(200));
+  @include triangle(up-right, 0, shade(random-color(200), 40%), true);
+  @include triangle(down-left, 0, shade(random-color(200), 40%), true, before);
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0 solid;
+    transform: rotate(360deg);
+  }
+
+  &:before {
+    bottom: 0;
+    left: 0;
+    border-color: transparent transparent transparent shade(random-color(200), 40%);
+  }
+
+  &:after {
+    top: 0;
+    right: 0;
+    border-color: transparent shade(random-color(200), 40%) transparent transparent;
+  }
+
+  &:hover {
+    color: tint(random-color(200), 75%);
+
+    &:before,
+    &:after {
+      border-width: 80px 250px*1.05;
+    }
+  }
+}
+
+
+.btn-7 {
+  color: tint(random-color(200));
+
+  &:before,
+  &:after,
+  span:before,
+  span:after {
+    content: '';
+    @include absolute(0);
+    @include size(25.25%, 0);
+    background-color: shade(random-color(200), 40%);
+  }
+
+  &:before { left: 0; }
+  &:after { left: 50%; }
+
+  span {
+    &:before,
+    &:after {
+      top: auto;
+      bottom: 0;
+    }
+
+    &:before { left: 25%; }
+    &:after { left: 75%; }
+  }
+
+  &:hover {
+    color: tint(random-color(200), 75%);
+    background-color: #eeeeee;
+    &:before,
+    &:after,
+    span:before,
+    span:after {
+      height: 80px;
+    }
+  }
+}
+
+.btn-8 {
+  color: tint(random-color(200));
+
+  &:before,
+  &:after {
+    content: '';
+    @include absolute(0,0,0,0);
+    background-color: shade(random-color(200), 40%);
+  }
+
+  &:before { transform: translateY(-100%); }
+  &:after { transform: translateY(100%); }
+
+  &:hover {
+    color: tint(random-color(200), 75%);
+
+    &:before { transform: translateY(-50%); }
+    &:after { transform: translateY(50%); }
+  }
+}
+
+.btn-9 {
+  color: tint(random-color(200));
+
+  &:before,
+  &:after,
+  span:before,
+  span:after {
+    content: '';
+    @include absolute(0,null,null,0);
+    @include size(100%, 0);
+    background-color: rgba(shade(random-color(200), 40%), 0.25);
+    transition: 0.4s ease-in-out;
+  }
+
+  &:after,
+  span:before {
+    top: auto;
+    bottom: 0;
+  }
+
+  span:before,
+  span:after {
+    transition-delay: 0.4s;
+  }
+
+  &:hover {
+    color: tint(random-color(200), 75%);
+
+    &:before,
+    &:after,
+    span:before,
+    span:after {
+      height: 80px;
+    }
+  }
+
+  &:active {
+    background-color: random-color(200);
+  }
+}
+
+.btn-10 {
+  color: tint(random-color(200));
+
+  &:before,
+  &:after,
+  span:before,
+  span:after {
+    content: '';
+    @include absolute(0,null,null,0);
+    @include size(0, 80px);
+    background-color: rgba(shade(random-color(200), 40%), 0.25);
+    transition: 0.4s;
+  }
+
+  &:after,
+  span:before {
+    left: auto;
+    right: 0;
+  }
+
+  span:before,
+  span:after {
+    transition-delay: 0.4s;
+  }
+
+  &:hover {
+    color: tint(random-color(200), 75%);
+
+    &:before,
+    &:after,
+    span:before,
+    span:after {
+      width: 250px;
+    }
+  }
+
+  &:active {
+    background-color: random-color(200);
+  }
+}
+
+@keyframes criss-cross-left {
+  0% {
+    left: -20px;
+  }
+  50% {
+    left: 50%;
+    @include size(20px);
+  }
+  100% {
+    left: 50%;
+    @include size(250px*1.5);
+  }
+}
+
+@keyframes criss-cross-right {
+  0% {
+    right: -20px;
+  }
+  50% {
+    right: 50%;
+    @include size(20px);
+  }
+  100% {
+    right: 50%;
+    @include size(250px*1.5);
+  }
+}
+
+.btn-11 {
+  position: relative;
+  color: tint(random-color(200));
+
+  &:before,
+  &:after {
+    @include absolute(50%);
+    content: '';
+    @include size(20px);
+    background-color: random-color(200);
+    border-radius: 50%;
+  }
+
+  &:before {
+    left: -20px;
+    transform: translate(-50%, -50%);
+    // animation: criss-cross-left 0.8s reverse;
+  }
+
+  &:after {
+    right: -20px;
+    transform: translate(50%, -50%);
+    // animation: criss-cross-right 0.8s reverse;
+  }
+
+  &:hover {
+    color: tint(random-color(200), 75%);
+
+    &:before,
+    &:after {
+      // @include size(250px);
+    }
+
+    &:before {
+      animation: criss-cross-left 0.8s both;
+      animation-direction: alternate;
+    }
+
+    &:after {
+      animation: criss-cross-right 0.8s both;
+      animation-direction: alternate;
+    }
+  }
+}

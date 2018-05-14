@@ -1,0 +1,19 @@
+/* Titre */
+ #ruleTitleText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  /*text-shadow: 2px 2px #BDBDBD;
+  text-align: left;
+  color: blue;*/
+}
+
+#ruleTitle {
+  background-color: rgb(255, 182, 0);
+}
+
+#ruleTable {
+  border: 1px solid #cccccc;
+  border-collapse: collapse;
+  box-shadow: 0px 3px 6px 4px #aaaaaa;"
+}
